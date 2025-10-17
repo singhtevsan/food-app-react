@@ -1,0 +1,64 @@
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    background-color: lightgreen;
+}
+
+.logo {
+    width: 120px;
+    height: 100%;
+    display: block;
+}
+
+.nav-items ul {
+    list-style-type: none;
+}
+
+.nav-items ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.body-container {
+    border: 1px solid black;
+    background-color: #a5a4a4;
+    min-height: 50vh;
+    margin-top: 5px;
+}
+
+.restaurant-container {
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card {
+    width: 150px;
+    height: 100%;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.card-img {
+    width: 100%;
+    height: 50%;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.res-card:hover {
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
