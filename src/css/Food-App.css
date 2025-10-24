@@ -27,6 +27,11 @@
     cursor: pointer;
 }
 
+.login-btn{
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+}
 
 .body-container {
     border: 1px solid black;
@@ -41,6 +46,7 @@
     display: flex;
     margin: 5px;
     padding: 5px;
+    height: auto;
     width: calc(100%-10px);
     flex-wrap: wrap;
 }
@@ -92,3 +98,24 @@
     border-radius: 10px;
 }
 
+.card-details {
+    display: contents;
+    line-height: 1.5;
+}
+
+.card-details p {
+    font-weight: 500;
+}
+
+.shimmer-card {
+    width: 200px;
+    height: 350px;
+    padding: 5px;
+    margin: 10px;
+    background-color: white;
+    background-image: url("../img/shimmer.gif");
+    background-size: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
