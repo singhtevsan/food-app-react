@@ -2,12 +2,20 @@
     box-sizing: border-box;
 }
 
+body {
+    margin: 5px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid black;
     background-color: lightgreen;
+}
+
+.logo-container {
+    cursor: pointer;
 }
 
 .logo {
@@ -31,6 +39,11 @@
     background-color: #f0f0f0;
     padding: 5px;
     border-radius: 5px;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
 }
 
 .body-container {
@@ -76,13 +89,17 @@
     flex-wrap: wrap;
 }
 
-.res-card {
+.link-card {
+    margin: 10px;
     width: 200px;
+}
+
+.res-card {
+    width: 100%;
     height: 100%;
     padding: 5px;
     background-color: white;
     border-radius: 10px;
-    margin: 10px;
 }
 
 .res-card:hover {
@@ -118,4 +135,26 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
+}
+
+
+.errorPage {
+    width: 500px;
+    height: 500px;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.errorPage .errorImg {
+    width: 100%;
+    height: 80%;
+    border: 2px solid white;
+}
+
+.errorImg img {
+    width: 100%;
+    height: 100%;
 }
