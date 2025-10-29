@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const User = (props) => {
 
@@ -10,6 +10,17 @@ const User = (props) => {
         setCount(count+1);
         setCounter(counter+2);
     };
+
+    useEffect(()=>{
+        let set = setInterval(()=>{
+            console.log("Function Calling Function");
+        },1000);
+
+        return() =>{
+            clearInterval(set);
+        }
+
+    }, []);
 
     return (
         <div style={{border: "1px solid black", width: "400px", margin: "20px", padding: "10px"}}>
