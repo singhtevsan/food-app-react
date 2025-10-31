@@ -15,10 +15,13 @@ Footer
 import ReactDOM from "react-dom/client";
 import Body from "../components/Body";
 import { createBrowserRouter, RouterProvider } from "react-router";
-import About from "../components/About";
 import ErrorPage from "../components/ErrorPage";
 import AppLayout from "../components/AppLayout";
 import RestaurantMenu from "../components/RestaurantMenu";
+import { lazy, Suspense } from "react";
+
+
+const About = lazy( () => import("../components/About"));
 
 const appRouter = createBrowserRouter([
     {
@@ -35,7 +38,10 @@ const appRouter = createBrowserRouter([
             },
             {
                 path: "/about",
-                element: <About />
+                element:<Suspense fallback={
+                    <div className="body-container"><h1>Loading the page......</h1></div>
+                }><About />
+                </Suspense>
             }
         ],
         errorElement: <ErrorPage />

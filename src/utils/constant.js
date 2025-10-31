@@ -7,3 +7,5 @@ export const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=1
 // export const MENU_API = "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9628669&lng=77.57750899999999&restaurantId=655&submitAction=ENTER";
 
 export const MENU_API = "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9628669&lng=77.57750899999999&restaurantId=";
+
+export const ERROR_IMG = "https://img.lovepik.com/element/45008/9097.png_860.png";

@@ -1,4 +1,5 @@
 import { useRouteError } from "react-router";
+import { ERROR_IMG } from "../utils/constant";
 
 const ErrorPage = () => {
 
@@ -7,7 +8,7 @@ const ErrorPage = () => {
     return (
         <div className="errorPage">
             <div className="errorImg">
-                <img src="https://img.lovepik.com/element/45008/9097.png_860.png" alt="error" />
+                <img src={ERROR_IMG} alt="error" />
             </div>
             
             <h2>Opps !!</h2>

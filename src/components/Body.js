@@ -4,12 +4,21 @@ import Shimmer from "./Shimmer";
 import Filter from "./Filter";
 import { SWIGGY_API } from "../utils/constant";
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 const Body = () => {
 
     const [originalListOfRestaurants, setOriginalListOfRestaurants] = useState([]);
     const [filteredRestaurants, setFilteredRestauants] = useState([]);
+
+    const topRatedList = () => {
+        setFilteredRestauants( originalListOfRestaurants.filter( item => item.info.avgRating>=4.4 ));
+    }
+
+    const searchList = (value) => {
+        setFilteredRestauants( originalListOfRestaurants.filter( item => item.info.name.toLowerCase().includes( value.toLowerCase() ) ) );
+    }
 
     useEffect( () =>{
         fetchData();
@@ -24,13 +33,14 @@ const Body = () => {
         setFilteredRestauants(swiggy_res);
     }
 
-    const topRatedList = () => {
-        setFilteredRestauants( originalListOfRestaurants.filter( item => item.info.avgRating>=4.4 ));
-    }
-
-    const searchList = (value) => {
-        setFilteredRestauants( originalListOfRestaurants.filter( item => item.info.name.toLowerCase().includes( value.toLowerCase() ) ) );
-    }
+    const onlineStatus = useOnlineStatus();
+    if(onlineStatus == false){
+        return (
+            <div class="body-container">
+                <h1>Looks like you are offline!! Please check internet connectivity...</h1>
+            </div>
+        )
+    };
 
     if(originalListOfRestaurants.length == 0){
        
