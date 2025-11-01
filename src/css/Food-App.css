@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
     box-sizing: border-box;
 }
@@ -84,9 +86,11 @@ body {
 }
 
 .restaurant-container {
-    margin: 10px 0;
+    /* margin: 10px 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%,200px), 1fr));
 }
 
 .link-card {
@@ -105,7 +109,8 @@ body {
 .res-card:hover {
     border: 1px solid black;
     cursor: pointer;
-    background-color: #f0f0f0;
+    background-color: rgb(54, 54, 54);
+    color: white;
 }
 
 .card-img {

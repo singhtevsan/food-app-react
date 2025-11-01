@@ -11,7 +11,7 @@ const Filter = (props) => {
     }
 
     return (
-         <div className="filter bg-amber-50">
+         <div className="filter">
                 
                 <div>
                     <input type="text" value={searchText} 
