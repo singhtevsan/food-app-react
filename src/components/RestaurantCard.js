@@ -2,7 +2,7 @@ import { IMG_CDN } from "../utils/constant";
 
 const RestaurantCard = (props) => {
 
-    const {resData} = props;
+    const {resData, label} = props;
     
     const {
         cloudinaryImageId, name, cuisines, 
@@ -18,8 +18,16 @@ const RestaurantCard = (props) => {
     else cuisine = cuisines;
 
     return (
-        <div className="res-card">
+        <div className="res-card relative">
             <img className="card-img" src={IMG_CDN + cloudinaryImageId} alt ="res-img"/>
+            {
+                /* if promoted label is true show it in the card */
+                label ? 
+                <label className="absolute bg-black text-white text-lg p-[3px] top-[5px] left-[5px] rounded">
+                    Promoted
+                </label> : ''
+            }
+            
             <div className="card-details">
                 <h3 className="font-bold">{name}</h3>
                 <p>{cuisine.join(", ")}</p>

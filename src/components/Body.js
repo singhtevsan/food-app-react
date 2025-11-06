@@ -5,6 +5,7 @@ import Filter from "./Filter";
 import { SWIGGY_API } from "../utils/constant";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import WithPromotedLabel from "./WithPromotedLabel";
 
 
 const Body = () => {
@@ -19,6 +20,8 @@ const Body = () => {
     const searchList = (value) => {
         setFilteredRestauants( originalListOfRestaurants.filter( item => item.info.name.toLowerCase().includes( value.toLowerCase() ) ) );
     }
+
+    const RestaurantCardPromoted = WithPromotedLabel(RestaurantCard);
 
     useEffect( () =>{
         fetchData();
@@ -71,7 +74,12 @@ const Body = () => {
                         return (
                             <div className="link-card" key={restaurant.info.id} >
                                 <Link className="link" to={"/restaurant/" + restaurant.info.id}>
-                                    <RestaurantCard resData={restaurant} />
+                                    {
+                                        // using promoted restuarant card for lower ratings
+                                        restaurant.info.avgRating <= 4.3 ?
+                                        (<RestaurantCardPromoted resData={restaurant} />) :
+                                        (<RestaurantCard resData={restaurant} />)
+                                    }
                                 </Link>
                             </div>
                             
