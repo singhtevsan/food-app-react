@@ -1,18 +1,29 @@
 import { Outlet } from "react-router";
 import Header from "./Header"
+import { useEffect, useState } from "react";
+import UserContext from "../utils/UserContext";
 
 const AppLayout = () => {
+
+    const [userName, setUserName] = useState();
+
+    useEffect( ()=>{
+        setUserName("Tony Stark");
+    }, []);
+
     return (
-        <div className="app">
+        <UserContext.Provider value={{loggedInUser : userName, setUserName}}>
+            <div className="app">
 
-            {/* Header */}
-            <Header />
+                {/* Header */}
+                <Header />
 
-            <Outlet />
+                <Outlet />
 
-            {/* Footer */}
+                {/* Footer */}
 
-        </div>
+            </div>
+        </UserContext.Provider>
     )
 };
 

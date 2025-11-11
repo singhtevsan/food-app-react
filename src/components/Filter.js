@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../utils/UserContext";
 
 const Filter = (props) => {
 
@@ -10,6 +11,8 @@ const Filter = (props) => {
         searchList(searchText);
     }
 
+    const {loggedInUser, setUserName} = useContext(UserContext);
+
     return (
          <div className="filter">
                 
@@ -20,6 +23,10 @@ const Filter = (props) => {
                 </div>
                 <div>
                     <button className="rated-btn" onClick={topRatedList}>Top Rated Restaurants</button>
+                </div>
+                <div>
+                    <input type="text" value={loggedInUser} 
+                    onChange={ (event) => setUserName(event.target.value) } />
                 </div>
             </div>
     )
