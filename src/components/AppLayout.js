@@ -2,6 +2,7 @@ import { Outlet } from "react-router";
 import Header from "./Header"
 import { useEffect, useState } from "react";
 import UserContext from "../utils/UserContext";
+import Footer from "./Footer";
 
 const AppLayout = () => {
 
@@ -21,6 +22,7 @@ const AppLayout = () => {
                 <Outlet />
 
                 {/* Footer */}
+                <Footer />
 
             </div>
         </UserContext.Provider>
