@@ -19,6 +19,7 @@ import ErrorPage from "../components/ErrorPage";
 import AppLayout from "../components/AppLayout";
 import RestaurantMenu from "../components/RestaurantMenu";
 import { lazy, Suspense } from "react";
+import Cart from "../components/Cart";
 
 
 const About = lazy( () => import("../components/About"));
@@ -42,6 +43,10 @@ const appRouter = createBrowserRouter([
                     <div className="body-container"><h1>Loading the page......</h1></div>
                 }><About />
                 </Suspense>
+            },
+            {
+                path: "/cart",
+                element: <Cart />
             }
         ],
         errorElement: <ErrorPage />

@@ -1,8 +1,16 @@
+import { useDispatch } from "react-redux";
 import { IMG_CDN } from "../utils/constant";
+import { addItem } from "../utils/cartSlice";
 
 const AccordianItem = ({itemCard}) => {
     
     const {name, price, defaultPrice, description, imageId} = itemCard?.card?.info;
+
+    const dispatch = useDispatch();
+
+    const handleAddItem = (item) => {
+        dispatch(addItem(item));
+    }
 
     return (
         <div className="flex justify-between items-center bg-gray-100 p-4 border-b">
@@ -13,7 +21,8 @@ const AccordianItem = ({itemCard}) => {
             </div>
             <div className="w-[30%] flex justify-center relative">
                 <img src={IMG_CDN + imageId} className="rounded "/>
-                <button className="absolute -bottom-2 border cursor-pointer p-2 px-4 rounded bg-white text-black hover:bg-gray-800 hover:text-white">Add</button>
+                <button className="absolute -bottom-2 border cursor-pointer p-2 px-4 rounded bg-white text-black hover:bg-gray-800 hover:text-white"
+                    onClick={() => handleAddItem(itemCard)}>Add</button>
             </div>
         </div>
     )

@@ -85,6 +85,21 @@ body {
     color: whitesmoke;
 }
 
+.cart button {
+    background-color: white;
+    font-size: 1.3rem;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.cart button:hover {
+    background-color: #333;
+    color: whitesmoke;
+}
+
 .restaurant-container {
     /* margin: 10px 0;
     display: flex;
