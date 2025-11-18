@@ -11,7 +11,7 @@ const Filter = (props) => {
         searchList(searchText);
     }
 
-    const {loggedInUser, setUserName} = useContext(UserContext);
+    // const {loggedInUser, setUserName} = useContext(UserContext);
 
     return (
          <div className="filter">
@@ -24,10 +24,10 @@ const Filter = (props) => {
                 <div>
                     <button className="rated-btn" onClick={topRatedList}>Top Rated Restaurants</button>
                 </div>
-                <div>
+                {/* <div>
                     <input type="text" value={loggedInUser} 
                     onChange={ (event) => setUserName(event.target.value) } />
-                </div>
+                </div> */}
             </div>
     )
 };

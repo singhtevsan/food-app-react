@@ -11,7 +11,7 @@ const Header = () => {
 
     const onlineStatus = useOnlineStatus();
 
-    const user = useContext(UserContext);
+    // const user = useContext(UserContext);
 
     // subscribing to the store using selector
     const cartItems = useSelector( (store) => store.cart.items);
@@ -41,7 +41,7 @@ const Header = () => {
                         {btnText}
                     </li>
                     
-                    <li>{user.loggedInUser}</li>
+                    {/* <li>{user.loggedInUser}</li> */}
                 </ul>
             </div>
 
